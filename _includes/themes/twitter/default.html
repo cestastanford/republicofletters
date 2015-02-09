@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+    <!-- Le styles -->
+    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ ASSET_PATH }}/css/responsiveslides.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="{{ ASSET_PATH }}/js/responsiveslides.min.js"></script>
+
+    <link href="https://www.stanford.edu/su-identity/css/su-identity.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css">
+    <!--[if IE 8]>
+      <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie8.css" />
+    <![endif]-->
+    <!--[if IE 7]>
+      <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie7.css" />
+    <![endif]-->
+
+  </head>
+
+  <body>
+  <div id="su-wrap"> <!-- #su-wrap start -->
+  <div id="su-content"> <!-- #su-content start -->
+  
+  <!-- Brandbar snippet start -->
+  <div id="brandbar">
+    <div class="container">
+      <a href="http://www.stanford.edu">
+        <img src="https://www.stanford.edu/su-identity/images/brandbar-stanford-logo@2x.png" alt="Stanford University" width="152" height="23">
+      </a>
+    </div> <!-- .container end -->
+  </div> <!-- #brandbar end -->
+  <!-- Brandbar snippet end -->
+
+  <div class="container">
+
+
+    <div class="row-fluid">
+      
+      <div id="logo" class="span3">
+        <a class="brand" href="{{ HOME_PATH }}">
+          <img src="{{ ASSET_PATH }}/images/mrofl_logo.png">
+        </a>
+      </div>
+
+      <div class="span9">
+       
+        <ul class="inline navigation">
+          {% assign pages_list = site.pages %}
+          {% assign group = 'navigation' %}
+          {% include JB/pages_list %}
+        </ul>
+
+        <div class="row-fluid">
+          {{ content }}
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+
+      
+
+      <div class="row-fluid">
+        <div class="offset3">
+          <footer>
+        <p>
+        </p>
+      </footer>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      $(window).load(function() {
+        $(".rslides").responsiveSlides(
+          {nav:false, auto:false, pager:true});
+      });
+    </script>
+
+    {% include JB/analytics %}
+    
+      </div> <!-- #su-content end -->
+</div> <!-- #su-wrap end -->
+
+<!-- Global footer snippet start -->
+<div id="global-footer">
+  <div class="container">
+    <div class="row">
+      <div id="bottom-logo" class="span2">
+        <a href="http://www.stanford.edu">
+          <img src="https://www.stanford.edu/su-identity/images/footer-stanford-logo@2x.png" alt="Stanford University" width="105" height="49"/>
+        </a>
+      </div>
+      <!-- #bottom-logo end -->
+      <div id="bottom-text" class="span10">
+        <ul>
+          <li class="home"><a href="http://www.stanford.edu">SU Home</a></li>
+          <li class="maps alt"><a href="http://visit.stanford.edu/plan/maps.html">Maps &amp; Directions</a></li>
+          <li class="search-stanford"><a href="http://www.stanford.edu/search/">Search Stanford</a></li>
+          <li class="terms alt"><a href="http://www.stanford.edu/site/terms.html">Terms of Use</a></li>
+          <li class="copyright"><a href="http://www.stanford.edu/site/copyright.html">Copyright Complaints</a></li>
+        </ul>
+      </div> <!-- .bottom-text end -->
+      <div class="clear"></div>
+      <p class="copyright vcard">&copy; <span class="fn org">Stanford University</span>, <span class="adr"> <span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span> </span></p>
+    </div> <!-- .row end --> 
+  </div> <!-- .container end --> 
+</div> <!-- global-footer end -->
+<!-- Global footer snippet end -->
+  </body>
+</html>
